@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body >
+  <div id="app">
+    <div class="container">
+      <!--* <h3 :class="myClass">Ulaş Can Demirbağ</h3> -->
+      <!--* <h3 :class="{'text-danger' : counter == 2, 'text-success' : counter===0, 'text-warning': counter==1 , 'text-primary' : counter>3}">Ulaş Can Demirbağ</h3> -->
+      <!-- ! böyle koşula bağlı ise tek süslü parantez koyarak yapılır -->
+      <div class="container">
+      <h3 :class="boxClass">Ulaş Can Demirbağ</h3>
+        <p :style="{color:'#c5161c' , backgroundColor:'black'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam id voluptas eligendi ducimus, rerum eaque beatae vitae facilis, minima eveniet temporibus omnis consequuntur pariatur numquam assumenda. Minima odio eveniet debitis repudiandae tenetur iure sed architecto nesciunt asperiores, molestias possimus minus incidunt consequatur provident hic pariatur beatae cum dolore repellat dignissimos.</p>
+    </div>
+
+      <!-- ! bunu böyle yapmak yerine counter ın değişime göre return edicek değer lazım ozaman computed 
+      !  kullanımı daha doğru olacaktır
+     -->
+    </div>
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>

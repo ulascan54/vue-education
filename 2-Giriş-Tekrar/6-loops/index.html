@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <div class="container mx-sm-auto">
+
+      <ul class="list-group ">
+        <li class="list-group-item text-white list-group-item-action list-group-item-dark" v-for="member in memberList" :key="member"> {{ member.name }}</li>
+      </ul>
+
+      
+
+
+
+  </div>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
