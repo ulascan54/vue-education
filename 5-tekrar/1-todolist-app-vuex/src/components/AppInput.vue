@@ -1,0 +1,10 @@
+<template>
+    <div class="my-2">
+      <input type="text" placeholder="ne alacaksın" >
+    </div>
+</template>
+<script>
+export default {
+
+}
+</script>
