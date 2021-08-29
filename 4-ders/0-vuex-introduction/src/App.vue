@@ -1,16 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p>
+    <!-- {{ $store.state.person }}
+    {{ $store.state.permissions }} -->
+    <!-- <ul>
+      <li v-for="permissions in $store.state.permissions" :key="permissions">
+        {{ permissions }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="user in $store.state.userList" :key="user">
+        {{ user }}
+      </li>
+    </ul>    -->
+
+    <!-- {{ $store.state.fullName }} -->
+  </p>
+  <UserList />
+  <NewUser />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import UserList from '@/components/UserList'
+import NewUser from '@/components/NewUser'
+//! getter değişken gibi kullanılan geriye değer döndüren fonksiyonlar
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components:{
+    UserList,
+    NewUser
+  },
+
+  created() {
+    // console.log(this.$store.state.person)
+    // console.log(this.$store.state.theme)
+    // console.log(this.$store.getters.woodItems)
+    // console.log(this.$store.getters.activeUser)
+    // console.log('this. :>> ', this.activeUser);
+    },
+
+
 }
 </script>
 
