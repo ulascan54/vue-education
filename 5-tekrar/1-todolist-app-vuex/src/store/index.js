@@ -27,16 +27,16 @@ const store = createStore({
         created_at:new Date().getDate(),
         completed:false,
       }
-      axios.post("http://localhost:3000/items",saveObject)
-      .then(async response=>{
-        await commit("saveItem",response)
+      await axios.post("http://localhost:3000/items",saveObject)
+      .then( response=>{
+         commit("saveItem",response)
       })
       
     },
     async deleteItemFromAxios({commit},id){
-      axios.delete(`http://localhost:3000/items/${id}`)
-      .then(async delete_response=>{
-        await commit("deleteItem",delete_response)
+      await axios.delete(`http://localhost:3000/items/${id}`)
+      .then( delete_response=>{
+         commit("deleteItem",delete_response)
         }
       )
     }

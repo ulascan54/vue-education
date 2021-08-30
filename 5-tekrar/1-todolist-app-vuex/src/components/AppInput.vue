@@ -7,11 +7,11 @@
 import axios from "axios"
 export default {
   methods: {
-    onSave(e){
-      this.$store.dispatch("saveItemToAxios",e.target.value)
+   async  onSave(e){
+      await this.$store.dispatch("saveItemToAxios",e.target.value)
       e.target.value=""
       e.target.focus()
-       axios.get("http://localhost:3000/items")
+      await  axios.get("http://localhost:3000/items")
       .then((item_response)=>{
         this.$store.dispatch("getItemFromAxios", item_response.data)
       })

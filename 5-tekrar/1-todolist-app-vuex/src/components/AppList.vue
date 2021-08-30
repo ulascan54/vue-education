@@ -18,11 +18,11 @@ export default {
       })
   },
   methods: {
-    onDelete(id){
-      this.$store.dispatch("deleteItemFromAxios",id)
-       axios.get("http://localhost:3000/items")
-        .then((item_response)=>{
-        this.$store.dispatch("getItemFromAxios", item_response.data)
+    async onDelete(id){
+     await this.$store.dispatch("deleteItemFromAxios",id)
+       await axios.get("http://localhost:3000/items")
+        .then(( item_response)=>{
+         this.$store.dispatch("getItemFromAxios", item_response.data)
       })
     }
   },
