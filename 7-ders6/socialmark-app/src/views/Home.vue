@@ -14,8 +14,21 @@ export default {
       bookmarkList:[]
     }
   },
-    created(){
-    this.$appAxios.get("/bookmarks?_expand=category&_expand=user").then(bookmark_list_response => {
+    components:{
+    Sidebar
+  },
+  mounted() {
+    this.$socket.on("NEW_BOOKMARK_ADDED",  (bookmark)=>{
+            this.bookmarkList.push(bookmark)
+      })
+  },
+  created(){
+    this.fetchData()
+  },
+
+  methods: {
+    fetchData(){
+       this.$appAxios.get("/bookmarks?_expand=category&_expand=user").then(bookmark_list_response => {
       // console.log('bookmark_list_response :>> ', bookmark_list_response);
       this.bookmarkList=bookmark_list_response?.data || []
     })
@@ -29,11 +42,7 @@ export default {
       console.log('user_likes_response :>> ', user_likes_response);
       this.$store.commit("setLikes",user_likes_response?.data)
     })
-  },
-  components:{
-    Sidebar
-  },
-  methods: {
+    },
     updateBookmarkList(categoryId){
       const url= categoryId ? `/bookmarks?_expand=category&_expand=user&categoryId=${categoryId}` : `/bookmarks?_expand=category&_expand=user`
       this.$appAxios.get(url).then(bookmark_list_response => {

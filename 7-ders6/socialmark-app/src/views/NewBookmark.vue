@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     onSave(){
+
       // console.log(this.userData)
       // console.log(this._getCurrentUser)
       const saveData={
@@ -49,9 +50,15 @@ export default {
         created_at:new Date()
       }
       this.$appAxios.post("/bookmarks",saveData)
-      .then(()=>{ 
+      .then((save_bookmark_response)=>{ 
         // console.log('save_bookmark_response :>> ', save_bookmark_response);
         Object.keys(this.userData)?.forEach(field=>this.userData[field]=null)
+        const socketData={
+          ...save_bookmark_response.data,
+          user:this._getCurrentUser,
+          category: this.categoryList?.find(c=>c.id===saveData.categoryId)
+        }
+        this.$socket.emit("NEW_BOOKMARK_EVENT",socketData)
         this.$router.push({name:"HomePage"})
       })
       // this.$appAxios.post("/bookmarks",{})
