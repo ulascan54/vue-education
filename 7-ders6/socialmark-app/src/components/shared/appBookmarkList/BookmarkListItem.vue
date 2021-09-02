@@ -3,7 +3,7 @@
         <div class="p-3">
           <a :href="item.url" target="_blank" class="hover:text-black font-bold text-l mb-1 text-gray-600 text-center">{{item.title || "-"}}</a>
           <div class="flex items-center justify-center mt-2 gap-x-1">
-            <button @click="likeItem" class="like-btn group"  :class="{'bookmark-item-active':alreadyLiked}">
+            <button @click="likeItem" class="like-btn group"  :class="{'like-item-active':alreadyLiked}">
               <svg xmlns="http://www.w3.org/2000/svg" class="fill-current group-hover:text-white" height="24"
                 viewBox="0 0 24 24" width="24">
                 <path d="M0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none" />
@@ -51,28 +51,62 @@ export default {
   },
   methods: {
     likeItem(){
-      console.log('_userLikes :>> ',this._userLikes);
-         let likes=[...this._userLikes]
-      if (!this.alreadyLiked) {
-        likes = [...likes, this.item.id]
-      }
-      else{
-        likes=likes.filter(l=>l!=this.item.id)
-      }
-      this.$appAxios.patch(`/users/${this._getCurrentUser.id}`,{likes}).then(like_response=>{
-        console.log('like_response :>> ', like_response);
+      // console.log('_userLikes :>> ',this._userLikes);
+      //    let likes=[...this._userLikes]
+      // if (!this.alreadyLiked) {
+      //   likes = [...likes, this.item.id]
+      // }
+      // else{
+      //   likes=likes.filter(l=>l!=this.item.id)
+      // }
+      // this.$appAxios.patch(`/users/${this._getCurrentUser.id}`,{likes}).then(like_response=>{
+      //   console.log('like_response :>> ', like_response);
         
+      //   this.$store.commit("setLikes",likes)
+      // })
+       this.$appAxios({
+        url:this.alreadyLiked ? `/user_likes/${this.likedItem.id}` : "/user_likes",
+        method:this.alreadyLiked ? "DELETE" : "POST",
+        data:{
+          userId: this._getCurrentUser.id,
+          bookmarkId:this.item.id
+        }
+      }).then(user_like_response =>{
+        let likes=[...this._userLikes]
+        if(this.alreadyLiked){
+          likes=likes.filter(b=>b.id!== this.likedItem.id)
+        }else{
+          likes=[...likes,user_like_response.data]
+        }
         this.$store.commit("setLikes",likes)
       })
     },
     bookmarkItem(){
+      this.$appAxios({
+        url:this.alreadyBookmarked ? `/user_bookmarks/${this.bookmarkedItem.id}` : "/user_bookmarks",
+        method:this.alreadyBookmarked ? "DELETE" : "POST",
+        data:{
+          userId: this._getCurrentUser.id,
+          bookmarkId:this.item.id
+        }
+      }).then(user_bookmark_response =>{
+        let bookmarks=[...this._userBookmarks]
+        if(this.alreadyBookmarked){
+          bookmarks=bookmarks.filter(b=>b.id!== this.bookmarkedItem.id)
+        }else{
+          bookmarks=[...bookmarks,user_bookmark_response.data]
+        }
+        this.$store.commit("setBookmarks",bookmarks)
+      })
+    }, 
+    _bookmarkItem(){
       console.log('_userBookmarks :>> ',this._userBookmarks);
          let bookmarks=[...this._userBookmarks]
       if (!this.alreadyBookmarked) {
         bookmarks = [...bookmarks, this.item.id]
       }
       else{
-        bookmarks=bookmarks.filter(l=>l!=this.item.id)
+        bookmarks=bookmarks.filter(b=>b!=this.item.id)
       }
       this.$appAxios.patch(`/users/${this._getCurrentUser.id}`,{bookmarks}).then(bookmarks_response=>{
         console.log('bookmarks_response :>> ', bookmarks_response);
@@ -88,11 +122,21 @@ export default {
     userName(){
       return this.item?.user?.fullname || "-" 
     },
+
     alreadyLiked(){
-      return this._userLikes?.indexOf(this.item.id) > -1 
+      // return this._userLikes?.indexOf(this.item.id) > -1
+      return Boolean(this.likedItem)
     },
     alreadyBookmarked(){
-      return this._userBookmarks?.indexOf(this.item.id) > -1 
+      // return this._userBookmarks?.indexOf(this.item.id) > -1 
+      return Boolean(this.bookmarkedItem)
+
+    },
+    bookmarkedItem(){
+      return this._userBookmarks?.find(b=> b.bookmarkId === this.item.id)
+    },
+    likedItem(){
+      return this._userLikes?.find(b=> b.bookmarkId === this.item.id)
     },
     ...mapGetters(["_getCurrentUser","_userLikes","_userBookmarks"])
   }

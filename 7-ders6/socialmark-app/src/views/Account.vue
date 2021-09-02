@@ -1,11 +1,11 @@
 <template>
   <AppHeader />
   <div class="flex flex-row">
-  <side-bar />
-  <component :is="$route.meta.componentName" :items="bookmarkList"/>
-  {{ $log($route) }}
-      <!-- <AppBookmarkList v-if="bookmarkList.length>0" :items="bookmarkList"/>
-    <div v-else>Hiç kayıt bulunamadı</div> -->
+    <side-bar />
+    <component :is="$route.meta.componentName" :items="bookmarkList"/>
+    {{ $log($route) }}
+        <!-- <AppBookmarkList v-if="bookmarkList.length>0" :items="bookmarkList"/>
+      <div v-else>Hiç kayıt bulunamadı</div> -->
   </div>
 </template>
 <script>

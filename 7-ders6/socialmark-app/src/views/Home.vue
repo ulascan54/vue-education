@@ -19,6 +19,16 @@ export default {
       // console.log('bookmark_list_response :>> ', bookmark_list_response);
       this.bookmarkList=bookmark_list_response?.data || []
     })
+    //!bookmarkları olanları  çekmek için
+    this.$appAxios.get("/user_bookmarks/?_expand=bookmark&_expand=user").then(user_bookmark_response=>{
+      console.log('user_bookmark_response :>> ', user_bookmark_response);
+      this.$store.commit("setBookmarks",user_bookmark_response?.data)
+    })
+    //!like olanları çekmek için çekmek için
+    this.$appAxios.get("/user_likes/?_expand=bookmark&_expand=user").then(user_likes_response=>{
+      console.log('user_likes_response :>> ', user_likes_response);
+      this.$store.commit("setLikes",user_likes_response?.data)
+    })
   },
   components:{
     Sidebar
