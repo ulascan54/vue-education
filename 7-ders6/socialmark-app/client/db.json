@@ -1,0 +1,270 @@
+{
+  "users": [
+    {
+      "username": "ulascan54",
+      "fullname": "Ulas Can Demirbağ",
+      "password": "4029464bb1b6bbd2f86e9b19534fc842e452b161",
+      "id": 1
+    },
+    {
+      "username": "123",
+      "fullname": "123",
+      "password": "682d0c21835b9cb5cbdbb71076c7846dccd42b44",
+      "id": 2
+    },
+    {
+      "username": "323",
+      "fullname": "22",
+      "password": "c58053f2f237fd711b9f68fcf1cc971ad9c7ef3a",
+      "id": 3
+    },
+    {
+      "username": "22",
+      "fullname": "22",
+      "password": "e98c0c64c620ebfa51ee4b8a0399683dadf8d830",
+      "id": 4
+    }
+  ],
+  "user_bookmarks": [
+    {
+      "userId": 1,
+      "bookmarkId": 4,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 5,
+      "id": 2
+    }
+  ],
+  "user_likes": [
+    {
+      "userId": 1,
+      "bookmarkId": 2,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 3,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "bookmarkId": 4,
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 5,
+      "id": 5
+    }
+  ],
+  "bookmarks": [
+    {
+      "title": "Yeni teklonojilere adepte olmak",
+      "url": "http://www.sadef",
+      "categoryId": 1,
+      "description": "çok felaket",
+      "userId": 1,
+      "created_at": "2021-09-02T07:26:16.604Z",
+      "id": 1
+    },
+    {
+      "title": "react",
+      "url": "123123",
+      "categoryId": 2,
+      "description": "leşş",
+      "userId": 1,
+      "created_at": "2021-09-02T07:26:34.120Z",
+      "id": 2
+    },
+    {
+      "title": "123",
+      "url": "123",
+      "categoryId": 3,
+      "description": "312214",
+      "userId": 1,
+      "created_at": "2021-09-02T07:26:40.594Z",
+      "id": 3
+    },
+    {
+      "title": "afef",
+      "url": "afe",
+      "categoryId": 6,
+      "description": "asfaef",
+      "userId": 1,
+      "created_at": "2021-09-02T07:26:47.035Z",
+      "id": 4
+    },
+    {
+      "title": "SA",
+      "url": "SA",
+      "categoryId": 3,
+      "description": "ASA",
+      "userId": 1,
+      "created_at": "2021-09-02T10:10:35.008Z",
+      "id": 5
+    },
+    {
+      "title": "asdas",
+      "url": "asdasd",
+      "categoryId": 2,
+      "description": "123123",
+      "userId": 4,
+      "created_at": "2021-09-02T10:25:55.990Z",
+      "id": 6
+    },
+    {
+      "title": "123123",
+      "url": "123132",
+      "categoryId": 3,
+      "description": "123132",
+      "userId": 4,
+      "created_at": "2021-09-02T10:26:23.094Z",
+      "id": 7
+    },
+    {
+      "title": "123",
+      "url": "123",
+      "categoryId": 2,
+      "description": "123123",
+      "userId": 1,
+      "created_at": "2021-09-02T10:31:28.301Z",
+      "id": 8
+    },
+    {
+      "title": "1232222132312312",
+      "url": "123",
+      "categoryId": 2,
+      "description": "123123",
+      "userId": 4,
+      "created_at": "2021-09-02T10:35:37.556Z",
+      "id": 9
+    },
+    {
+      "title": "12321312312",
+      "url": "123",
+      "categoryId": 3,
+      "description": "12312321",
+      "userId": 4,
+      "created_at": "2021-09-02T10:36:41.188Z",
+      "id": 10
+    },
+    {
+      "title": "12312",
+      "url": "21312",
+      "categoryId": 3,
+      "description": "123123123",
+      "userId": 1,
+      "created_at": "2021-09-02T10:36:52.839Z",
+      "id": 11
+    },
+    {
+      "title": "ASFASF",
+      "url": "ASFASF",
+      "categoryId": 3,
+      "description": "ASFASF",
+      "userId": 1,
+      "created_at": "2021-09-02T10:43:44.836Z",
+      "id": 12
+    },
+    {
+      "title": "TEST 123",
+      "url": "123",
+      "categoryId": 3,
+      "description": "123",
+      "userId": 4,
+      "created_at": "2021-09-02T10:55:39.023Z",
+      "id": 13
+    },
+    {
+      "title": "123",
+      "url": "123",
+      "categoryId": 2,
+      "description": "123",
+      "userId": 1,
+      "created_at": "2021-09-02T11:27:20.190Z",
+      "id": 14
+    },
+    {
+      "title": "123123",
+      "url": "1231231",
+      "categoryId": 3,
+      "description": "123123132",
+      "userId": 1,
+      "created_at": "2021-09-02T11:28:12.321Z",
+      "id": 15
+    },
+    {
+      "title": "123",
+      "url": "123",
+      "categoryId": 2,
+      "description": "123123",
+      "userId": 4,
+      "created_at": "2021-09-02T11:33:05.744Z",
+      "id": 16
+    },
+    {
+      "title": "123",
+      "url": "123",
+      "categoryId": 3,
+      "description": "123",
+      "userId": 4,
+      "created_at": "2021-09-02T11:33:33.240Z",
+      "id": 17
+    },
+    {
+      "title": "sasfas",
+      "url": "asfasf",
+      "categoryId": 2,
+      "description": "asfasf",
+      "userId": 4,
+      "created_at": "2021-09-03T10:23:13.801Z",
+      "id": 18
+    },
+    {
+      "title": "asfaef",
+      "url": "aefaef",
+      "categoryId": 2,
+      "description": "aefaef",
+      "userId": 1,
+      "created_at": "2021-09-03T10:36:27.797Z",
+      "id": 19
+    },
+    {
+      "title": "asfasf",
+      "url": "asfasf",
+      "categoryId": 5,
+      "description": "asfasf",
+      "userId": 4,
+      "created_at": "2021-09-03T15:12:51.640Z",
+      "id": 20
+    }
+  ],
+  "categories": [
+    {
+      "name": "Vue.js",
+      "id": 1
+    },
+    {
+      "name": "React.js",
+      "id": 2
+    },
+    {
+      "name": "Clod",
+      "id": 3
+    },
+    {
+      "name": "Frontend",
+      "id": 4
+    },
+    {
+      "name": "Backend",
+      "id": 5
+    },
+    {
+      "name": "Social",
+      "id": 6
+    }
+  ]
+}
