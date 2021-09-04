@@ -21,20 +21,42 @@
     {
       "username": "22",
       "fullname": "22",
-      "password": "e98c0c64c620ebfa51ee4b8a0399683dadf8d830",
+      "password": "4061b3bc33b271802613ce691155530a343c153c",
       "id": 4
+    },
+    {
+      "username": "1",
+      "fullname": null,
+      "password": "56890b0082ec7962cd7bee53e8f2dc0fc325c116",
+      "id": 5
+    },
+    {
+      "username": "2",
+      "fullname": "2",
+      "password": "ebdf6be86b6df381f974a8345b8248e8645d348f",
+      "id": 6
     }
   ],
   "user_bookmarks": [
     {
       "userId": 1,
-      "bookmarkId": 4,
-      "id": 1
-    },
-    {
-      "userId": 1,
       "bookmarkId": 5,
       "id": 2
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 1,
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 3,
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 6,
+      "id": 5
     }
   ],
   "user_likes": [
@@ -57,6 +79,31 @@
       "userId": 4,
       "bookmarkId": 5,
       "id": 5
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 1,
+      "id": 6
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 11,
+      "id": 7
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 13,
+      "id": 8
+    },
+    {
+      "userId": 4,
+      "bookmarkId": 15,
+      "id": 9
+    },
+    {
+      "userId": 6,
+      "bookmarkId": 7,
+      "id": 10
     }
   ],
   "bookmarks": [
@@ -239,6 +286,15 @@
       "userId": 4,
       "created_at": "2021-09-03T15:12:51.640Z",
       "id": 20
+    },
+    {
+      "title": "ads",
+      "url": "asdas",
+      "categoryId": 2,
+      "description": "asdasd",
+      "userId": 6,
+      "created_at": "2021-09-03T19:06:08.611Z",
+      "id": 21
     }
   ],
   "categories": [
