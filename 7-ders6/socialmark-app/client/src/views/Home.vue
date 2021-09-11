@@ -1,7 +1,7 @@
 <template>
   <AppHeader />
   <div class="flex flex-row">
-    <Sidebar @category-changed="updateBookmarkList" />
+    <Sidebar @category-changed="updateBookmarkList" @selected="selected"/>
     <AppBookmarkList v-if="bookmarkList.length > 0" :items="bookmarkList" />
     <div v-else>Hiç kayıt bulunamadı</div>
   </div>
@@ -58,6 +58,19 @@ export default {
         this.bookmarkList = bookmark_list_response?.data || [];
       });
     },
+    selected(e){
+        e.target.parentElement.children.forEach(element => {
+          element.className="sidebar-item"
+        });
+        console.log(e.target.parentElement.children);
+        e.target.className="sidebar-item-active"
+
+    }
   },
 };
 </script>
+<style>
+
+  
+</style>
+
